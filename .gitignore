@@ -3,6 +3,7 @@
 src/config.json
 cache.db
 logfile.log
+last_cache.blob
 
 # Logs
 logs
