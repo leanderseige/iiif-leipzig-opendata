@@ -1,0 +1,79 @@
+{
+
+  "version": {
+      "label": {
+        "en": [
+          "IIIF Presentation Version"
+        ]
+      },
+      "value": {
+        "en": [
+          "3.0.0"
+        ]
+      }
+  },
+
+  "manifest": {
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "",
+    "type": "Manifest",
+    "label": {},
+    "metadata":[],
+    "items":[],
+    "structures":[]
+  },
+
+  "range": {
+      "id": "",
+      "type": "Range",
+      "label": {},
+      "items": []
+  },
+
+  "canvas": {
+    "id": "",
+    "type": "Canvas",
+    "label": { "en": [ "" ] },
+    "height": 0,
+    "width": 0,
+    "items": [
+      {
+        "id": "",
+        "type": "AnnotationPage",
+        "items": []
+      }
+    ]
+  },
+
+  "image": {
+    "id": "",
+    "type": "Annotation",
+    "motivation": "painting",
+    "body": {
+      "id": "",
+      "type": "Image",
+      "format": "image/jpeg",
+      "service": [
+        {
+          "id": "",
+          "type": "ImageService3",
+          "profile": "level2"
+        }
+      ],
+      "height": 0,
+      "width": 0
+    },
+    "target": ""
+  },
+
+  "collection":{
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "",
+    "type": "Collection",
+    "label": "",
+    "description": "",
+    "attribution": "",
+    "logo": ""
+  }
+
+}

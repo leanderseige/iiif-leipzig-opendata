@@ -1,3 +1,9 @@
+# IIIF Leipzig Opendata
+
+src/config.json
+cache.db
+logfile.log
+
 # Logs
 logs
 *.log

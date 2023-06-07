@@ -1,0 +1,20 @@
+{
+  "name": "iiif-leipzig-opendata",
+  "version": "0.0.1",
+  "description": "IIIF services for the Open Data Portal of the City of Leipzig",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT License",
+  "dependencies": {
+    "better-sqlite3": "^8.4.0",
+    "compression": "^1.7.4",
+    "cross-fetch": "^3.1.6",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "log4js": "^6.9.1",
+    "uuid": "^9.0.0"
+  }
+}

@@ -1,0 +1,68 @@
+{
+
+  "version": {
+      "label": [{
+        "@language": "en",
+        "@value": "IIIF Presentation Version"
+      }],
+      "value": [{
+        "@language": "en",
+        "@value": "2.1.1"
+      }]
+  },
+
+  "manifest": {
+    "@context": "http://iiif.io/api/presentation/2/context.json",
+    "@id": "",
+    "@type": "sc:Manifest",
+    "label": "",
+    "metadata": [],
+    "sequences": []
+  },
+
+  "sequence": {
+    "@id": "",
+    "@type": "sc:Sequence",
+    "canvases": []
+  },
+
+  "canvas": {
+    "@id": "",
+    "@type": "sc:Canvas",
+    "images": [],
+    "width":0,
+    "height":0
+  },
+
+  "image": {
+    "@id": "",
+    "@type": "oa:Annotation",
+    "license": "",
+    "motivation": "sc:painting",
+    "on": "",
+    "resource": {
+      "@id": "",
+      "@type": "dctypes:Image",
+      "format": "image/jpeg",
+      "height": 0,
+      "width": 0,
+      "label": "",
+      "service": {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "",
+        "profile": "http://iiif.io/api/image/2/level1.json"
+      }
+    }
+  },
+
+  "collection":{
+    "@context": "http://iiif.io/api/presentation/2/context.json",
+    "@id": "https://iiif.manducus.net/collections/collection.json",
+    "@type": "sc:Collection",
+    "label": "",
+    "description": "",
+    "collections": [],
+    "manifests": []
+  }
+
+}
