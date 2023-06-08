@@ -2,7 +2,11 @@
   "port": 2000,
   "interface": "127.0.0.1",
   "baseurl": "http://localhost:2000",
-  "caching": true,
+  "caching": false,
   "cacheClearOnStartup": true,
-  "cacheMaxAge": -1
+  "cacheMaxAge": -1,
+  "iiifBaseUri": "https://leipzig.iiif.cloud/",
+  "tempDir": "/tmp/",
+  "imageDir": "/images/",
+  "cmdConvert": "/usr/local/bin/convert"
 }
