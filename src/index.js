@@ -78,8 +78,6 @@ app.all('*', function (req, res, next) {
     logger.error(error)
     res.status(500).send(errMessageForClient)
   })
-
-
 })
 
 app.listen(config.port,config.interface)

@@ -1,9 +1,9 @@
 # IIIF Leipzig Opendata
-
 src/config.json
 cache.db
 logfile.log
 last_cache.blob
+images
 
 # Logs
 logs

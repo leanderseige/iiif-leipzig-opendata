@@ -47,23 +47,11 @@ async function getCachedFetch(query, useCache, logger) {
   }
 }
 
-exports.getManifest = async (p,logger,req) => {
-  let url = `https://opendata.leipzig.de/api/3/action/package_show?id=`+p
+exports.getManifest = async (id,logger,req) => {
+  let url = `https://opendata.leipzig.de/api/3/action/package_show?id=`+id
   logger.info("Fetching fresh data: "+url)
   let data = await getCachedFetch(url,true,logger)
-  manifest = iiif.buildManifest3(p.logger,req)
-
-  manifest.id = config.iiif_manifest_base+p
-  manifest.label = { en: [data.result.title] }
-  manifest.rights = data.result.license_url
-  manifest.requiredStatement = {
-    label: { en: [ "Attribution" ] },
-    value: { en: [ data.result.maintainer ] }
-  }
-  manifest.metadata = data.result.extras.map( field => ({
-    label: { en: [field.key] },
-    value: { en: [field.value] }
-  }))
+  manifest = iiif.buildManifest3(id,data,logger)
 
   if(!data) {
     logger.error("Can't generate IIIF Manifest")
