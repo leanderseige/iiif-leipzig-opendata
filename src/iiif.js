@@ -26,6 +26,7 @@ exports.buildManifest2 = (id,data,logger) => {
       canvas["@id"] = manifest["@id"]+'/canvas/'+data.result.resources[x].id
       canvas.width = dims.width
       canvas.height = dims.height
+      canvas.label = data.result.title
 
       let image = tools.clone(template211.image)
       image["@id"] = manifest["@id"]+'/page/'+data.result.resources[x].id
