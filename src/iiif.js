@@ -32,7 +32,7 @@ exports.buildManifest2 = (id,data,logger) => {
       image["@id"] = manifest["@id"]+'/page/'+data.result.resources[x].id
       image.resource.width = dims.width
       image.resource.height = dims.height
-      image.on = canvas.id
+      image.on = canvas['@id']
       image.license = data.result.license_url
       image.resource.service['@id'] = config.iiifBaseUri+'/image/'+imageId+'.ptif'
 
