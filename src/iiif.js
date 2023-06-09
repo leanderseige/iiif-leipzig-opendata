@@ -5,8 +5,41 @@ const images = require('./images.js')
 
 const config = require('./config.json')
 
-exports.buildManifest2 = (id,data) => {
+exports.buildManifest2 = (id,data,logger) => {
   let manifest = tools.clone(template211.manifest)
+  manifest["@id"] = config.iiifBaseUri+'/manifest/'+id
+  manifest.label = data.result.title
+
+  manifest.metadata = data.result.extras.map( field => ({
+    label: field.key,
+    value: field.value
+  }))
+
+  let sequence = tools.clone(template211.sequence)
+  sequence['@id'] = config.iiifBaseUri+'/manifest/'+id+'/sequence'
+  manifest.sequences.push(sequence)
+
+  for(x in data.result.resources) {
+    if(data.result.resources[x].format=='jpg') {
+      let [dims,imageId] = images.loadImage(data.result.resources[x].url, logger)
+      let canvas = tools.clone(template211.canvas)
+      canvas["@id"] = manifest["@id"]+'/canvas/'+data.result.resources[x].id
+      canvas.width = dims.width
+      canvas.height = dims.height
+
+      let image = tools.clone(template211.image)
+      image["@id"] = manifest["@id"]+'/page/'+data.result.resources[x].id
+      image.resource.width = dims.width
+      image.resource.height = dims.height
+      image.on = canvas.id
+      image.licence = data.result.license_url
+      image.resource.service['@id'] = config.iiifBaseUri+'/image/'+imageId+'.ptif'
+
+      canvas.images.push(image)
+      manifest.sequences[0].canvases.push(canvas)
+    }
+  }
+
   return manifest
 }
 

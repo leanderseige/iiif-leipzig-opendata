@@ -37,7 +37,7 @@ app.all('*', function (req, res, next) {
 
   // checking new query
 
-	let p = req.url.split("/")
+	let p = req.path.split("/")
 	p.shift()
 
 	if(p.length!=2) {
@@ -57,6 +57,22 @@ app.all('*', function (req, res, next) {
   res.header('Access-Control-Allow-Methods', 'GET, OPTIONS')
   res.header('Content-Type', 'application/json')
 
+  let iiifVersion = "2.1.1"
+  let accept = req.header('Accept')
+  if(accept!==undefined) {
+    accept = accept.toString()
+    if(accept.includes("http://iiif.io/api/presentation/3/context.json")) {
+      iiifVersion = "3.0.0"
+    }
+  }
+  let getversion = req.query.version
+  if(getversion!==undefined) {
+    getversion = getversion.toString()
+      if(getversion.startsWith("3")) {
+      iiifVersion = "3.0.0"
+    }
+  }
+
   let key = v5(config.baseurl+req.url,'3c0fce3d-6601-45fb-813d-b0c6e823ddfa')
 
 
@@ -64,7 +80,7 @@ app.all('*', function (req, res, next) {
   ? [ckan.getCollection, 'Error getting collection']
   : [ckan.getManifest, 'Error getting manifest']
 
-  getData(p[1], logger).then(data => {
+  getData(p[1], iiifVersion, logger).then(data => {
     if(config.caching) {
       logger.info("Updating cache.")
       console.log("key: "+key)
