@@ -34,7 +34,7 @@ exports.buildManifest3 = (id,data,logger) => {
       canvas.height = dims.height
       let image = tools.clone(template300.image)
       image.id = manifest.id+'/image/'+data.result.resources[x].id
-      image.body.service[0].id = config.iiifBaseUri+'/image/'+imageId
+      image.body.service[0].id = config.iiifBaseUri+'/image/'+imageId+'.ptif'
       image.body.id = image.body.service[0].id+'/full/max/0/default.jpg'
       image.body.width = dims.width
       image.body.height = dims.height
