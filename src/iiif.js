@@ -16,6 +16,7 @@ exports.buildManifest3 = (id,data,logger) => {
   manifest.id = config.iiifBaseUri+'/manifest/'+id
   manifest.label = { en: [data.result.title] }
   manifest.rights = data.result.license_url
+  manifest['@context'].push(data.result.license_url)
   manifest.requiredStatement = {
     label: { en: [ "Attribution" ] },
     value: { en: [ data.result.maintainer ] }
