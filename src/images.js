@@ -41,5 +41,5 @@ exports.loadImage = (url,logger) => {
   this.convertImage(ifile,ofile)
   dims = sizeOf(ofile)
   logger.info(dims)
-  return(dims)
+  return([dims,key])
 }
