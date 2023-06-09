@@ -33,7 +33,7 @@ exports.buildManifest2 = (id,data,logger) => {
       image.resource.width = dims.width
       image.resource.height = dims.height
       image.on = canvas.id
-      image.licence = data.result.license_url
+      image.license = data.result.license_url
       image.resource.service['@id'] = config.iiifBaseUri+'/image/'+imageId+'.ptif'
 
       canvas.images.push(image)
