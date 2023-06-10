@@ -37,8 +37,9 @@ exports.convertImage = (ifile,ofile,logger) => {
   return
 }
 
-exports.loadImage = (url,logger) => {
-  let key = v5(url,'3c0fce3d-6601-45fb-813d-b0c6e823ddfa')
+exports.loadImage = (id, url,logger) => {
+  // let key = v5(url,'3c0fce3d-6601-45fb-813d-b0c6e823ddfa')
+  let key = id
   let ifile = config.tempDir+'/'+key+'.jpg'
   let ofile = config.imageDir+'/'+key+'.ptif'
   this.getHttpFile(url,ifile,logger)

@@ -49,7 +49,7 @@ async function getCachedFetch(query, useCache, logger) {
 }
 
 exports.getManifest = async (id,iiifVersion,logger) => {
-  let url = `https://opendata.leipzig.de/api/3/action/package_show?id=`+id
+  let url = `https://opendata.leipzig.de/api/3/action/dataset_show?id=`+id
   logger.info("Fetching data: "+url)
   let data = await getCachedFetch(url,true,logger)
   if(iiifVersion.startsWith("3")) {
