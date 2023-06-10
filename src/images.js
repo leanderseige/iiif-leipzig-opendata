@@ -27,7 +27,7 @@ exports.convertImage = (ifile,ofile,logger) => {
     logger.info("IIIF Image present, skip converting "+ofile)
     return
   }
-  let cmd = config.cmdConvert+' '+ifile+' -define tiff:tile-geometry=256x256 -compress jpeg -quality 100 "ptif:'+ofile+'"'
+  let cmd = config.cmdConvert+' '+ifile+' -define tiff:tile-geometry=256x256 -compress jpeg -quality 96 "ptif:'+ofile+'"'
   logger.info(cmd)
   try {
     execSync(cmd,{stdio: 'inherit'})
