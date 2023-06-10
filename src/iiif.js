@@ -30,11 +30,12 @@ exports.buildManifest2 = (id,data,logger) => {
 
       let image = tools.clone(template211.image)
       image["@id"] = manifest["@id"]+'/page/'+data.result.resources[x].id
-      image.resource.width = dims.width
-      image.resource.height = dims.height
       image.on = canvas['@id']
       image.license = data.result.license_url
       image.resource.service['@id'] = config.iiifBaseUri+'/image/'+imageId+'.ptif'
+      image.resource['@id'] = image.resource.service['@id']+"/full/full/0/default.jpg"
+      image.resource.width = dims.width
+      image.resource.height = dims.height
 
       canvas.images.push(image)
       manifest.sequences[0].canvases.push(canvas)
