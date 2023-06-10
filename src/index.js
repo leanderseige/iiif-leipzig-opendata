@@ -62,6 +62,7 @@ app.all('*', function (req, res, next) {
   if(accept!==undefined) {
     accept = accept.toString()
     if(accept.includes("http://iiif.io/api/presentation/3/context.json")) {
+      logger.info("Choosing IIIF Presentation version 3.0.0 (HTTP Header)")
       iiifVersion = "3.0.0"
     }
   }
@@ -69,7 +70,8 @@ app.all('*', function (req, res, next) {
   if(getversion!==undefined) {
     getversion = getversion.toString()
       if(getversion.startsWith("3")) {
-      iiifVersion = "3.0.0"
+        logger.info("Choosing IIIF Presentation version 3.0.0 (GET parameter)")
+        iiifVersion = "3.0.0"
     }
   }
 
