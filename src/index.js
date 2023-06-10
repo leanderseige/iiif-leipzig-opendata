@@ -57,6 +57,7 @@ app.all('*', function (req, res, next) {
   res.header('Access-Control-Allow-Methods', 'GET, OPTIONS')
   res.header('Content-Type', 'application/json')
 
+  // deciding which IIIF Presentation version to deliver
   let iiifVersion = "2.1.1"
   let accept = req.header('Accept')
   if(accept!==undefined) {
@@ -75,27 +76,40 @@ app.all('*', function (req, res, next) {
     }
   }
 
+  // checking cache and returning cached data
   let key = v5(config.baseurl+req.url,'3c0fce3d-6601-45fb-813d-b0c6e823ddfa')
+  let cacheresult = stmt_get.get(key)
+  if(cacheresult) {
+    if(cacheresult.last) {
+      let age = Math.round(Date.now()/1000) - cacheresult.last
+      if(age<config.cacheMaxAge) {
+        logger.info("Sending cached data. Age is "+age+" seconds.")
+        res.json(JSON.parse(cacheresult.body))
+        return
+      } else {
+        logger.info("Frontend cache outdated. Refreshing.")
+      }
+    }
+  }
 
-
+  // processing and returning new data
   const [getData, errMessageForClient] = p[0] === 'collection'
   ? [ckan.getCollection, 'Error getting collection']
   : [ckan.getManifest, 'Error getting manifest']
-
   getData(p[1], iiifVersion, logger).then(data => {
     if(config.caching) {
       logger.info("Updating cache.")
-      console.log("key: "+key)
-      fs.writeFile("last_cache.blob", JSON.stringify(data), ()=>{} )
+      // fs.writeFile("last_cache.blob", JSON.stringify(data), ()=>{} )
       stmt_store.run(key, Math.round(Date.now()/1000), JSON.stringify(data))
     }
-    logger.info("Sending data.")
+    logger.info("Sending cached data.")
     res.json(data)
   })
   .catch(error => {
     logger.error(error)
     res.status(500).send(errMessageForClient)
   })
+
 })
 
 app.listen(config.port,config.interface)

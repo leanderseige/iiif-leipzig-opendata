@@ -8,8 +8,8 @@ const { cache_table_definition, cache_get_query, cache_store_query, cache_trunca
 // const iiif = require('./iiif')
 
 async function getCachedFetch(query, useCache, logger) {
-  let key = v5(query,'3c0fce3d-6601-45fb-813d-b0c6e823ddfa')
 
+  let key = v5(query,'3c0fce3d-6601-45fb-813d-b0c6e823ddfa')
   const db = new Database('cache.db')
   const stmt_get = db.prepare(cache_get_query)
   const stmt_store = db.prepare(cache_store_query)
@@ -21,7 +21,7 @@ async function getCachedFetch(query, useCache, logger) {
       let age = now-cacheresult.last
       if(config.cacheMaxAge===-1 || age<config.cacheMaxAge) {
         logger.info("Returning backend cache data.")
-        let retval = tools.clone(cacheresult.body)
+        let retval = JSON.parse(cacheresult.body)
         db.close()
         return retval
       }
@@ -32,12 +32,13 @@ async function getCachedFetch(query, useCache, logger) {
     const response = await fetch(query)
     if (!response.ok) {
       // throw new Error('getCachedFetch: response code was not `ok`')
-      logger.error('getCachedFetch: response code was not `ok`')
+      logger.error('CKAN esponse code was not `OK`.')
       return false
     }
     const body = await response.json()
-    // stmt_store.run(key, Math.round(Date.now()/1000), body)
+    stmt_store.run(key, Math.round(Date.now()/1000), JSON.stringify(body))
     db.close()
+    logger.info("Returning fresh data.")
     return body
 
   } catch (e) {
@@ -49,18 +50,16 @@ async function getCachedFetch(query, useCache, logger) {
 
 exports.getManifest = async (id,iiifVersion,logger) => {
   let url = `https://opendata.leipzig.de/api/3/action/package_show?id=`+id
-  logger.info("Fetching fresh data: "+url)
+  logger.info("Fetching data: "+url)
   let data = await getCachedFetch(url,true,logger)
   if(iiifVersion.startsWith("3")) {
     manifest = iiif.buildManifest3(id,data,logger)
   } else {
     manifest = iiif.buildManifest2(id,data,logger)
   }
-
   if(!data) {
-    logger.error("Can't generate IIIF Manifest")
+    logger.error("Can't generate IIIF Manifest.")
   }
-
   return manifest
 }
 

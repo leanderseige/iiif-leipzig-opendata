@@ -9,6 +9,7 @@ exports.buildManifest2 = (id,data,logger) => {
   let manifest = tools.clone(template211.manifest)
   manifest["@id"] = config.iiifBaseUri+'/manifest/'+id
   manifest.label = data.result.title
+  manifest.description = data.result.title
 
   manifest.metadata = data.result.extras.map( field => ({
     label: field.key,
