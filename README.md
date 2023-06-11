@@ -21,6 +21,8 @@ Endless IIIF usage scenarios
 * Well prepared for AI and Machine-Learning
 * and many more
 
+Currently, as long as the service is not integrated into the appropriate websites, prior knowledge of the manifest URIs is required. See the file data/manifests.csv in order to get a list of the manifests.
+
 ## System architecture
 
 The main server is implemented in Javascript using Node, ExpressJS, Sqlite and other libraries. Image conversion is done using ImageMagick and uses pyramidal TIFF images with lossless JPEG compression.

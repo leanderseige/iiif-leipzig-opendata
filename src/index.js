@@ -35,6 +35,11 @@ app.use(compression())
 
 app.all('*', function (req, res, next) {
 
+  if(req.path==='/') {
+    res.redirect(302,'https://github.com/leanderseige/iiif-leipzig-opendata')
+    return
+  }
+
   // checking new query
 
 	let p = req.path.split("/")
