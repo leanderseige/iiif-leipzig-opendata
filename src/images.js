@@ -57,7 +57,7 @@ exports.convertImage = (ifile,ofile,logger) => {
   })
 }
 
-exports.loadImage = (id, url,logger) => {
+exports.loadImage = (id, url, logger, x) => {
   // let key = v5(url,'3c0fce3d-6601-45fb-813d-b0c6e823ddfa')
   let key = id
   let ifile = config.tempDir+'/'+key+'.jpg'
@@ -67,7 +67,7 @@ exports.loadImage = (id, url,logger) => {
       let dims = sizeOf(ofile)
       logger.info(dims)
       logger.info(key)
-      return Promise.resolve([dims,key])
+      return Promise.resolve([dims,key,x])
     })
   })
 }

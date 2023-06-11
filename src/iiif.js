@@ -24,7 +24,7 @@ exports.buildManifest2 = (id,data,logger) => {
 
   for(x in data.result.resources) {
     if(data.result.resources[x].format=='jpg') {
-      let promise = images.loadImage(data.result.resources[x].id, data.result.resources[x].url, logger).then( (x,dims,imageId) => {
+      let promise = images.loadImage(data.result.resources[x].id, data.result.resources[x].url, logger, x).then( ([dims,imageId,x]) => {
         let canvas = tools.clone(template211.canvas)
         canvas["@id"] = manifest["@id"]+'/canvas/'+data.result.resources[x].id
         canvas.width = dims.width
@@ -74,7 +74,7 @@ exports.buildManifest3 = (id,data,logger) => {
 
   for(x in data.result.resources) {
     if(data.result.resources[x].format=='jpg') {
-      let promise = images.loadImage(data.result.resources[x].id, data.result.resources[x].url, logger).then( (x,dims,imageId) => {
+      let promise = images.loadImage(data.result.resources[x].id, data.result.resources[x].url, logger, x).then( ([dims,imageId,x]) => {
         let canvas = tools.clone(template300.canvas)
         canvas.id = manifest.id+'/canvas/'+data.result.resources[x].id
         canvas.items[0].id = manifest.id+'/page/'+data.result.resources[x].id
