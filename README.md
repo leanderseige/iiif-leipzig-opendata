@@ -58,7 +58,7 @@ Canvas:
 
 ## Notes
 
-ImageMacgick required this in /etc/ImageMagick-6/policy.xml in order to process large images:
+ImageMagick required this in ```/etc/ImageMagick-6/policy.xml``` in order to process large images:
 ```
 <policy domain="resource" name="disk" value="8GB"/>
 ```
