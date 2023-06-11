@@ -1,12 +1,13 @@
 {
   "port": 2000,
   "interface": "127.0.0.1",
-  "baseurl": "http://localhost:2000",
-  "caching": false,
+  "caching": true,
   "cacheClearOnStartup": true,
-  "cacheMaxAge": -1,
-  "iiifBaseUri": "https://leipzig.iiif.cloud/",
+  "cacheMaxAge": 60,
+  "iiifBaseUri": "https://leipzig.iiif.cloud",
   "tempDir": "/tmp/",
-  "imageDir": "/images/",
-  "cmdConvert": "/usr/local/bin/convert"
+  "imageDir": "/Users/seige/iiif-leipzig-opendata/images/",
+  "cmdConvert": "/usr/local/bin/convert",
+  "cmdNice": "/usr/bin/nice",
+  "cmdWget": "/usr/local/bin/wget"
 }

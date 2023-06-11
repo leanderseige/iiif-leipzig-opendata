@@ -5,7 +5,8 @@ fetch('https://opendata.leipzig.de/api/3/action/dataset_search?fq=res_format:jpg
   (response) => response.json()
 ).then( async (data) => {
   for(x in data.result.results) {
-    let murl = config.iiifBaseUri+"/manifest/"+data.result.results[x].id
+    // let murl = config.iiifBaseUri+"/manifest/"+data.result.results[x].id
+    let murl = "http://localhost:2000/manifest/"+data.result.results[x].id
     console.log("Processing "+murl)
     await fetch(murl)
   }

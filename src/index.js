@@ -41,16 +41,22 @@ app.all('*', function (req, res, next) {
 	p.shift()
 
 	if(p.length!=2) {
-    res.status(404).send("Error. Illegal query type 1")
-    logger.info("Error. Illegal query type 1")
+    res.status(404).send("Error. Illegal query type 1.")
+    logger.info("Error. Illegal query type 1.")
 		return
 	}
 
 	if( ! (['manifest','collection'].includes(p[0])) ) {
-    res.status(404).send("Error. Illegal query type 2")
-    logger.info("Error. Illegal query type 2")
+    res.status(404).send("Error. Illegal query type 2.")
+    logger.info("Error. Illegal query type 2.")
 		return
 	}
+
+  if( ! (/^[0-9a-zA-Z\-]+$/.test(p[1]))) {
+    res.status(404).send("Error. Illegal query type 3.")
+    logger.info("Error. Illegal query type 3.")
+		return
+  }
 
   res.header('Access-Control-Allow-Origin', '*')
   res.header('Access-Control-Allow-Headers', '*')
@@ -96,13 +102,13 @@ app.all('*', function (req, res, next) {
   const [getData, errMessageForClient] = p[0] === 'collection'
   ? [ckan.getCollection, 'Error getting collection']
   : [ckan.getManifest, 'Error getting manifest']
-  getData(p[1], iiifVersion, logger).then(data => {
+  getData(p[1], iiifVersion, logger).then( (data) => {
     if(config.caching) {
       logger.info("Updating cache.")
       // fs.writeFile("last_cache.blob", JSON.stringify(data), ()=>{} )
       stmt_store.run(key, Math.round(Date.now()/1000), JSON.stringify(data))
     }
-    logger.info("Sending cached data.")
+    logger.info("Sending data.")
     res.json(data)
   })
   .catch(error => {

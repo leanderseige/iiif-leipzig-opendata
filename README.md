@@ -1,5 +1,22 @@
 # IIIF for the Open Data Portal of the City of Leipzig
 
+This is an external IIIF API service for the CKAN Open Data Portal of the City of Leipzig.
+
+Technical Features:
+* Supports IIIF Presentation API version 2.1.1 and 3.0.0
+* Supports IIIF Image API version 2 and 3 (via IIPImage Server)
+* Seamless dynamic demand driven data updates
+* Lossless quality image conversion
+* Asychronous / parallel architecture: high server responsiveness even under high im age conversion load
+
+Endless IIIF usage scenarios
+* Digital Storytelling
+* Cross-Insitutional Research Workspaces
+* Create Annotations
+* Games and Fun-Apps
+* AI-/Machine-Learning Processing
+
+
 ## Data Model
 
 For now the mapping is as follows
