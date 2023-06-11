@@ -55,3 +55,10 @@ Canvas:
 #### Image API
 
 ```https://leipzig.iiif.cloud/image/<resource_id>```
+
+## Notes
+
+ImageMacgick required this in /etc/ImageMagick-6/policy.xml in order to process large images:
+```
+<policy domain="resource" name="disk" value="8GB"/>
+```
