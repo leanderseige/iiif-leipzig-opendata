@@ -1,6 +1,6 @@
-# IIIF for the Open Data Portal of the City of Leipzig
+# IIIF for the Open-Data-Portal of the City of Leipzig
 
-This is an external IIIF API service for the CKAN Open Data Portal of the City of Leipzig.
+This is an external IIIF API service for the CKAN Open Data Portal of the City of Leipzig. It is my entry to the Open Data Hackathon 2023 of the City of Leipzig (https://2023.dataweek.de/lodh-2023/).
 
 <img src="img/iiif-leipzig-social.png" heigh="400" />
 
