@@ -62,3 +62,15 @@ ImageMagick required this in ```/etc/ImageMagick-6/policy.xml``` in order to pro
 ```
 <policy domain="resource" name="disk" value="8GB"/>
 ```
+
+## Installation
+
+* check out this repository
+
+* run ```npm install```
+
+* copy ```src/config.example.json``` to ```src/config.json``` and edit all parameters
+
+* run ```nodemon src/index.js```
+
+* optional: edit and run ```node src/utils/warmup.js``` in order to do all the heavy image conversion upfront
