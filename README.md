@@ -15,6 +15,7 @@ Technical Features:
 Endless IIIF usage scenarios
 * Digital Storytelling
 * Cross-Institutional Research Workspaces
+* Geo-Referencing of Maps and Photos
 * Create Annotations
 * Games and Fun-Apps
 * Well prepared for AI and Machine-Learning
@@ -64,7 +65,7 @@ Canvas:
 
 #### Image API
 
-```https://leipzig.iiif.cloud/image/<resource_id>```
+```https://leipzig.iiif.cloud/image/<resource.id>```
 
 ## Notes
 
