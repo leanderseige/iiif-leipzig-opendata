@@ -2,7 +2,7 @@
 
 This is an external IIIF API service for the CKAN Open Data Portal of the City of Leipzig. It is my entry to the Open Data Hackathon 2023 of the City of Leipzig (https://2023.dataweek.de/lodh-2023/).
 
-<img src="img/iiif-leipzig-social.png" heigh="400" />
+<img src="img/iiif-leipzig-social.png" />
 
 Technical Features:
 * Supports IIIF Presentation API version 2.1.1 and 3.0.0
@@ -19,6 +19,14 @@ Endless IIIF usage scenarios
 * Games and Fun-Apps
 * Well prepared for AI and Machine-Learning
 * and many more
+
+## System architecture
+
+The main server is implemented in Javascript using Node, ExpressJS, Sqlite and other libraries. Image conversion is done using ImageMagick and uses pyramidal TIFF images with lossless JPEG compression.
+
+<img src="img/systemarchitecture.png" />
+
+The entire system runs on Linux or MacOSX and employs Apache2, Nginx, IIPImage and other components.
 
 ## Data Modelling
 
@@ -76,3 +84,13 @@ ImageMagick required this in ```/etc/ImageMagick-6/policy.xml``` in order to pro
 * run ```nodemon src/index.js```
 
 * optional: edit and run ```node src/utils/warmup.js``` in order to do all the heavy image conversion upfront
+
+## Further Development
+
+In the near future the following things could be considered:
+
+* Grouping the manifests into collections. Requires the help of subject experts.
+
+* IIIF services could be integrated in their respective websites.
+
+* The contents of the system could be extended.
