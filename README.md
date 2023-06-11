@@ -2,6 +2,8 @@
 
 This is an external IIIF API service for the CKAN Open Data Portal of the City of Leipzig. It is my entry to the Open Data Hackathon 2023 of the City of Leipzig (https://2023.dataweek.de/lodh-2023/).
 
+For more information on IIIF see https://iiif.io
+
 <img src="img/iiif-leipzig-social.png" />
 
 Technical Features:
@@ -87,6 +89,8 @@ ImageMagick required this in ```/etc/ImageMagick-6/policy.xml``` in order to pro
 * run ```nodemon src/index.js```
 
 * optional: edit and run ```node src/utils/warmup.js``` in order to do all the heavy image conversion upfront
+
+(install Linux, Apache2, Nginx, IIPServer etc. according to their documentation)
 
 ## Further Development
 
