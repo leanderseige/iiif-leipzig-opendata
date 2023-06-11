@@ -2,6 +2,8 @@
 
 This is an external IIIF API service for the CKAN Open Data Portal of the City of Leipzig.
 
+<img src="img/iiif-leipzig-social.png" heigh="400" />
+
 Technical Features:
 * Supports IIIF Presentation API version 2.1.1 and 3.0.0
 * Supports IIIF Image API version 2 and 3 (via IIPImage Server)
