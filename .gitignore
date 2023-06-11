@@ -4,6 +4,7 @@ cache.db
 logfile.log
 last_cache.blob
 images
+.DS_Store
 
 # Logs
 logs
