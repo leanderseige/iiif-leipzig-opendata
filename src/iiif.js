@@ -1,3 +1,14 @@
+/*
+ * IIIF-Leipzig-Opendata
+ *
+ * IIIF services for Leipzig's Open Data Portal -  an entry to the Leipzig Open Data Hackathon 2023
+ *
+ * (c) 2023, Leander Seige, released under the GNU GPL V3, contact: leander@seige.name
+ *
+ *  https://github.com/leanderseige/iiif-leipzig-opendata
+ *
+ */
+
 const tools = require('./tools')
 const template211 = require('./template-2.1.1.json')
 const template300 = require('./template-3.0.0.json')

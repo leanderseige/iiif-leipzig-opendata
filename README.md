@@ -25,6 +25,21 @@ Endless IIIF usage scenarios
 
 Currently, as long as the service is not integrated into the appropriate websites, prior knowledge of the manifest URIs is required. See the file data/manifests.csv in order to get a list of the manifests.
 
+## Usage examples
+
+Here are three simple image loading examples to demonstrate the functionality. IIIF has of course much higher potential.
+
+Load an image into Mirador:
+https://manducus.net/m3/?manifest=https://leipzig.iiif.cloud/manifest/12feea1b-3edd-5308-8ae9-a41733bcc2ff
+
+Load an image into Universalviewer:
+https://uv-v4.netlify.app/#?manifest=https://leipzig.iiif.cloud/manifest/5539b4fc-d6fd-59ce-8f7f-5572931cee84&c=&m=&cv=&xywh=-213%2C317%2C3164%2C2566
+
+Load an image into TIFY:
+https://tify.rocks/?manifest=https%3A%2F%2Fleipzig.iiif.cloud%2Fmanifest%2Fd52bbf61-1995-4c41-a819-885fc4ea175a&xywh=-492%2C0%2C4314%2C2250
+
+More complex usage scenarios are possible using storytelling apps (Storiiies, StrollView and others), research workspaces (Mirador 3 with annotation plugin) or edutainment apps (Animal Crossing Art Generator or Cover.Boutique). See https://github.com/IIIF/awesome-iiif for inspiration. And check out the poster in /img/ for some screenshots.
+
 ## System architecture
 
 The main server is implemented in Javascript using Node, ExpressJS, Sqlite and other libraries. Image conversion is done using ImageMagick and uses pyramidal TIFF images with lossless JPEG compression.
