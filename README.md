@@ -38,7 +38,13 @@ https://uv-v4.netlify.app/#?manifest=https://leipzig.iiif.cloud/manifest/5539b4f
 Load an image into TIFY:
 https://tify.rocks/?manifest=https%3A%2F%2Fleipzig.iiif.cloud%2Fmanifest%2Fd52bbf61-1995-4c41-a819-885fc4ea175a&xywh=-492%2C0%2C4314%2C2250
 
-More complex usage scenarios are possible using storytelling apps (Storiiies, StrollView and others), research workspaces (Mirador 3 with annotation plugin) or edutainment apps (Animal Crossing Art Generator or Cover.Boutique). See https://github.com/IIIF/awesome-iiif for inspiration. And check out the poster in /img/ for some screenshots.
+More complex usage scenarios are possible using storytelling apps (Storiiies, StrollView and others), research workspaces (Mirador 3 with annotation plugin), geo-referencing (Allmaps) or edutainment apps (Animal Crossing Art Generator or Cover.Boutique). See https://github.com/IIIF/awesome-iiif for inspiration. And check out the poster in /img/ for some screenshots.
+
+<img src="img/screenshot-allmaps.png" height="200" />
+<img src="img/screenshot-animalcrossing.png height="200" />
+<img src="img/screenshot-coverboutiqe.png height="200" />
+<img src="img/screenshot-mirador2.png height="200" />
+<img src="img/screenshot-strollview.png height="200" />
 
 ## System architecture
 
