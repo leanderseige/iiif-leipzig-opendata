@@ -40,11 +40,7 @@ https://tify.rocks/?manifest=https%3A%2F%2Fleipzig.iiif.cloud%2Fmanifest%2Fd52bb
 
 More complex usage scenarios are possible using storytelling apps (Storiiies, StrollView and others), research workspaces (Mirador 3 with annotation plugin), geo-referencing (Allmaps) or edutainment apps (Animal Crossing Art Generator or Cover.Boutique). See https://github.com/IIIF/awesome-iiif for inspiration. And check out the poster in /img/ for some screenshots.
 
-<img src="img/screenshot-allmaps.png" height="200" />
-<img src="img/screenshot-animalcrossing.png height="200" />
-<img src="img/screenshot-coverboutiqe.png height="200" />
-<img src="img/screenshot-mirador2.png height="200" />
-<img src="img/screenshot-strollview.png height="200" />
+<img src="img/screenshot-allmaps.png" height="200" /><img src="img/screenshot-animalcrossing.png" height="200" /><img src="img/screenshot-coverboutiqe.png" height="200" /><img src="img/screenshot-mirador2.png" height="200" /><img src="img/screenshot-strollview.png" height="200" />
 
 ## System architecture
 
