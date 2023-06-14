@@ -90,7 +90,7 @@ Canvas:
 
 ### Content Negotiation
 
-The API responds default with IIIF Presentation API Version 2. In order to get Version 3 manifests it is possible to
+The API responds default with IIIF Presentation API version 2. In order to get version 3 manifests it is possible to
 
 * append the parameter ```?version=3``` to the manifest URI
 ```
