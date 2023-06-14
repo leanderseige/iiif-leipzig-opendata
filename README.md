@@ -88,12 +88,27 @@ Canvas:
 
 ```https://leipzig.iiif.cloud/image/<resource.id>```
 
-## Notes
+### Content Negotiation
 
-ImageMagick required this in ```/etc/ImageMagick-6/policy.xml``` in order to process large images:
+The API responds default with IIIF Presentation API Version 2. In order to get Version 3 manifests it is possible to
+
+* append the parameter ```?version=3``` to the manifest URI or
+
+* send the HTTP header ```https://leipzig.iiif.cloud/manifest/d52bbf61-1995-4c41-a819-885fc4ea175a``` for instance:
+
 ```
-<policy domain="resource" name="disk" value="8GB"/>
+curl -H 'Accept: application/ld+json;profile="http://iiif.io/api/presentation/3/context.json"' 'https://leipzig.iiif.cloud/manifest/d52bbf61-1995-4c41-a819-885fc4ea175a'
 ```
+
+## Future Development
+
+In the near future the following things could be considered:
+
+* Grouping the manifests into collections. Requires the help of subject experts.
+
+* IIIF services could be integrated in their respective websites.
+
+* The contents of the system could be extended.
 
 ## Installation
 
@@ -109,12 +124,9 @@ ImageMagick required this in ```/etc/ImageMagick-6/policy.xml``` in order to pro
 
 (install Linux, Apache2, Nginx, IIPServer etc. according to their documentation)
 
-## Further Development
+## Notes
 
-In the near future the following things could be considered:
-
-* Grouping the manifests into collections. Requires the help of subject experts.
-
-* IIIF services could be integrated in their respective websites.
-
-* The contents of the system could be extended.
+ImageMagick required this in ```/etc/ImageMagick-6/policy.xml``` in order to process large images:
+```
+<policy domain="resource" name="disk" value="8GB"/>
+```
