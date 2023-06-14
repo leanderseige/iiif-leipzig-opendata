@@ -98,10 +98,15 @@ https://leipzig.iiif.cloud/manifest/d52bbf61-1995-4c41-a819-885fc4ea175a?version
 ```
 or
 
-* send the HTTP header ```Accept: application/ld+json;profile="http://iiif.io/api/presentation/3/context.json"``` for instance:
+* send the HTTP header
+```
+Accept: application/ld+json;profile="http://iiif.io/api/presentation/3/context.json"
+```
+for instance:
 
 ```
-curl -H 'Accept: application/ld+json;profile="http://iiif.io/api/presentation/3/context.json"' 'https://leipzig.iiif.cloud/manifest/d52bbf61-1995-4c41-a819-885fc4ea175a'
+curl -H 'Accept: application/ld+json;profile="http://iiif.io/api/presentation/3/context.json"'
+'https://leipzig.iiif.cloud/manifest/d52bbf61-1995-4c41-a819-885fc4ea175a'
 ```
 
 ## Future Development
