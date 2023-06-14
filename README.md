@@ -27,6 +27,8 @@ Currently, as long as the service is not integrated into the appropriate website
 
 ## Usage examples
 
+See a full list of available manifest URIs in file ```data/manifests.csv```.
+
 Here are three simple image loading examples to demonstrate the functionality. IIIF has of course much higher potential.
 
 Load an image into Mirador:
@@ -41,8 +43,6 @@ https://tify.rocks/?manifest=https%3A%2F%2Fleipzig.iiif.cloud%2Fmanifest%2Fd52bb
 More complex usage scenarios are possible using storytelling apps (Storiiies, StrollView and others), research workspaces (Mirador 3 with annotation plugin), geo-referencing (Allmaps) or edutainment apps (Animal Crossing Art Generator or Cover.Boutique). See https://github.com/IIIF/awesome-iiif for inspiration. Check out the poster in ```/img/```. And here are some uncommented screenshots:
 
 <img src="img/screenshot-allmaps.png" height="200" /><img src="img/screenshot-animalcrossing.png" height="200" /><img src="img/screenshot-coverboutiqe.png" height="200" /><img src="img/screenshot-mirador2.png" height="200" /><img src="img/screenshot-strollview.png" height="200" />
-
-See a full list of available manifest URIs in file ```data/manifests.csv```.
 
 ## System architecture
 
