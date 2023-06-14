@@ -72,6 +72,15 @@ exports.buildManifest3 = (id,data,logger) => {
   manifest.label = { en: [data.result.title] }
   manifest.rights = data.result.license_url
   manifest['@context'].push(data.result.license_url)
+
+  manifest['@context'] = []
+  let rights = {}
+  rights['@type'] = '@id'
+  rights['@id'] = 'dcterms:rights'
+  rights['enum'] = [data.result.license_url]
+  manifest['@context'].push(rights)
+  manifest['@context'].push("http://iiif.io/api/presentation/3/context.json")
+
   manifest.requiredStatement = {
     label: { en: [ "Attribution" ] },
     value: { en: [ data.result.maintainer ] }
