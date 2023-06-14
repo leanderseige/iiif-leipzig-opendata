@@ -95,7 +95,8 @@ The API responds default with IIIF Presentation API Version 2. In order to get V
 * append the parameter ```?version=3``` to the manifest URI
 ```
 https://leipzig.iiif.cloud/manifest/d52bbf61-1995-4c41-a819-885fc4ea175a?version=3
-``` or
+```
+or
 
 * send the HTTP header ```Accept: application/ld+json;profile="http://iiif.io/api/presentation/3/context.json"``` for instance:
 
