@@ -75,8 +75,8 @@ exports.buildManifest3 = (id,data,logger) => {
 
   manifest['@context'] = []
   let rights = {}
-  rights['@type'] = '@id'
-  rights['@id'] = 'dcterms:rights'
+  rights['@type'] = 'id'
+  rights['id'] = 'dcterms:rights'
   rights['enum'] = [data.result.license_url]
   manifest['@context'].push(rights)
   manifest['@context'].push("http://iiif.io/api/presentation/3/context.json")
