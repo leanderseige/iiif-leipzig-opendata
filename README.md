@@ -42,6 +42,8 @@ More complex usage scenarios are possible using storytelling apps (Storiiies, St
 
 <img src="img/screenshot-allmaps.png" height="200" /><img src="img/screenshot-animalcrossing.png" height="200" /><img src="img/screenshot-coverboutiqe.png" height="200" /><img src="img/screenshot-mirador2.png" height="200" /><img src="img/screenshot-strollview.png" height="200" />
 
+See a full list of available manifest URIs in file ```data/manifests.csv```.
+
 ## System architecture
 
 The main server is implemented in Javascript using Node, ExpressJS, Sqlite and other libraries. Image conversion is done using ImageMagick and uses pyramidal TIFF images with lossless JPEG compression.
