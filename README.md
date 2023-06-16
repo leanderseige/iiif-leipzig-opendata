@@ -27,7 +27,7 @@ Currently, as long as the service is not integrated into the appropriate website
 
 ## Usage examples
 
-See a full list of available manifest URIs in file ```data/manifests.csv```.
+**Find a full list of available manifest URIs in file ```data/manifests.csv```.**
 
 Here are three simple image loading examples to demonstrate the functionality. IIIF has of course much higher potential.
 
