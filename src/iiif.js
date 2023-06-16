@@ -70,15 +70,16 @@ exports.buildManifest3 = (id,data,logger) => {
 
   manifest['@context'] = []
 
-  manifest['@context'].push(
-    { "example":"https://www.govdata.de"}
-  )
-  
-  let rights = {}
-  rights['@type'] = '@id'
-  rights['@id'] = 'example:rights'
-  manifest['@context'].push(rights)
+  // manifest['@context'].push(
+  //   { "example":"https://www.govdata.de"}
+  // )
+  //
+  // let rights = {}
+  // rights['@type'] = '@id'
+  // rights['@id'] = 'example:rights'
+  // manifest['@context'].push(rights)
 
+  manifest['@context'].push( "{\"rights\": {\"@id\": \"example:rights\", \"@type\": \"@id\"}}" )
   manifest['@context'].push("http://iiif.io/api/presentation/3/context.json")
 
   manifest.id = config.iiifBaseUri+'/manifest/'+id
