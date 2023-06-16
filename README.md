@@ -15,7 +15,7 @@ Technical Features:
 * Content Negotiation
 
 Endless IIIF usage scenarios
-* Digital Storytelling
+* Digital Storytelling and Edutainment
 * Cross-Institutional Research Workspaces
 * Geo-Referencing of Maps and Photos
 * Create Annotations
