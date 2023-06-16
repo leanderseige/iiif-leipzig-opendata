@@ -68,18 +68,22 @@ exports.buildManifest2 = (id,data,logger) => {
 exports.buildManifest3 = (id,data,logger) => {
   let manifest = tools.clone(template300.manifest)
 
+  manifest['@context'] = []
+
+  manifest['@context'].push(
+    { "example":"https://www.govdata.de"}
+  )
+  
+  let rights = {}
+  rights['@type'] = '@id'
+  rights['@id'] = 'example:rights'
+  manifest['@context'].push(rights)
+
+  manifest['@context'].push("http://iiif.io/api/presentation/3/context.json")
+
   manifest.id = config.iiifBaseUri+'/manifest/'+id
   manifest.label = { en: [data.result.title] }
   manifest.rights = data.result.license_url
-  manifest['@context'].push(data.result.license_url)
-
-  manifest['@context'] = []
-  let rights = {}
-  rights['@type'] = 'id'
-  rights['id'] = 'dcterms:rights'
-  rights['enum'] = [data.result.license_url]
-  manifest['@context'].push(rights)
-  manifest['@context'].push("http://iiif.io/api/presentation/3/context.json")
 
   manifest.requiredStatement = {
     label: { en: [ "Attribution" ] },
