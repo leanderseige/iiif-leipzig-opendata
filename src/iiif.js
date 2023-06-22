@@ -68,7 +68,7 @@ exports.buildManifest2 = (id,data,logger) => {
 exports.buildManifest3 = (id,data,logger) => {
   let manifest = tools.clone(template300.manifest)
 
-  manifest['@context'] = []
+  // manifest['@context'] = []
 
   // manifest['@context'].push(
   //   { "example":"https://www.govdata.de"}
@@ -81,16 +81,18 @@ exports.buildManifest3 = (id,data,logger) => {
 
   // manifest['@context'].push("{\"rights\": {\"@id\": \"example:rights\", \"@type\": \"@id\"}}")
 
-  manifest['@context'].push("http://iiif.io/api/presentation/3/context.json")
+  // manifest['@context'].push("http://iiif.io/api/presentation/3/context.json")
+  // manifest['@context'].push("http://iiif.io/api/presentation/3/context.json")
 
   manifest.id = config.iiifBaseUri+'/manifest/'+id
   manifest.label = { en: [data.result.title] }
-  manifest.rights = data.result.license_url
+  // manifest.rights = data.result.license_url
 
   manifest.requiredStatement = {
-    label: { en: [ "Attribution" ] },
-    value: { en: [ data.result.maintainer ] }
+    label: { en: [ "Attribution; License" ] },
+    value: { en: [ data.result.maintainer + "; " + data.result.license_url ] }
   }
+
   manifest.metadata = data.result.extras.map( field => ({
     label: { en: [field.key] },
     value: { en: [field.value] }
