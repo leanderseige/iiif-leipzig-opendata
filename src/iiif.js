@@ -90,7 +90,7 @@ exports.buildManifest3 = (id,data,logger) => {
 
   manifest.requiredStatement = {
     label: { en: [ "Attribution; License" ] },
-    value: { en: [ data.result.maintainer + "; " + data.result.license_url ] }
+    value: { en: [ data.result.maintainer + '; <a href="' + data.result.license_url + '" target="_blank">' + data.result.license_url + '</a>' ] }
   }
 
   manifest.metadata = data.result.extras.map( field => ({
