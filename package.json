@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "MIT License",
+  "license": "GPL V3",
   "dependencies": {
     "better-sqlite3": "^8.4.0",
     "compression": "^1.7.4",
