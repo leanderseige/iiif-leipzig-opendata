@@ -6,7 +6,12 @@ For more information on IIIF see https://iiif.io
 
 <img src="img/iiif-leipzig-social.png" />
 
-Technical Features:
+<img src="img/image.png" width="400" />
+
+This project achieved an award at the Open Date Hackathon of the City of Leipzig at Dataweek 2023.
+https://x.com/DataWeekLeipzig/status/1673677567037980678
+
+## Technical Features:
 * Supports IIIF Presentation API version 2.1.1 and 3.0.0
 * Supports IIIF Image API version 2 and 3 (via IIPImage Server)
 * Cache with seamless demand driven metadata updates
